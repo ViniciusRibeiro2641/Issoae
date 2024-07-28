@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Estilizados</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; /* Rosa pastel claro */
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Impede a rolagem da página */
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h1 {
+            font-size: 24px;
+            color: #d81b60; /* Rosa pastel escuro */
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.2s;
+            position: relative; /* Necessário para a animação */
+        }
+        .btn-sim {
+            background-color: #45ff45; /* Verde pastel claro */
+            color: #ffffff;
+        }
+        .btn-nao {
+            background-color: #ff0000; /* Vermelho pastel médio */
+            color: #ffffff;
+        }
+        .btn-sim:hover {
+            background-color: #9fff9f; /* Verde pastel suave */
+        }
+        .btn-nao:hover {
+            background-color: #f06292; /* Rosa pastel intenso */
+        }
+        .btn-nao.fugindo {
+            animation: fugir 1s infinite;
+        }
+        .btn-nao.invisivel {
+            opacity: 0; /* Torna o botão invisível */
+            pointer-events: none; /* Faz com que o botão não receba eventos de clique */
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes fugir {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💖Olá minha karoxinha, supondo que só exista eu e você no mundo, você namoraria comigo?💖</h1>
+        <button class="btn-sim"><a href="Sim.html">Sim</a></button>
+        <button class="btn-nao" id="btn-nao">Não</button>
+    </div>
+
+    <script>
+        // JavaScript para tornar o botão "Não" ainda mais evasivo
+        const btnNao = document.getElementById('btn-nao');
+
+        btnNao.addEventListener('mouseover', () => {
+            // Adiciona as classes de "fugindo" e "invisivel" quando o mouse está sobre o botão
+            btnNao.classList.add('fugindo', 'invisivel');
+        });
+
+    </script>
+</body>
+</html>
